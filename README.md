@@ -1,2 +1,4 @@
 # Python_odd_even
-Contador de pares e ímpares.
+- Manipulação de arquivo .txt (escrita e leitura);
+- Criação de list com números aleatórios;
+- Contador de pares e ímpares.
