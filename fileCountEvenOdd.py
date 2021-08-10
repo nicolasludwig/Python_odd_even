@@ -25,7 +25,9 @@ def count_odd_even(file):
             count_even += 1
         else:
             count_odd += 1
-    print ("\nTotal de números: ", len(int_num_imp),"\nPares: ",count_even,"\nÍmpares: ",count_odd,"\n")
+    dados="\nTotal de números: {}\nPares: {}\nÍmpares: {}\n"
+    print (dados.format(len(int_num_imp),count_even,count_odd))
+    # print ("\nTotal de números: ", len(int_num_imp),"\nPares: ",count_even,"\nÍmpares: ",count_odd,"\n")
 
 lista_num=create_list() #Cria uma lista de números aleatórios
 file=open('arq.txt','w') #Abre o arquivo para escrita
