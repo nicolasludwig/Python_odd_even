@@ -1,4 +1,18 @@
-def count_odd(file):
+from random import randint
+
+def create_list():
+    quant_num=randint(0,20) #Define aleatoriamente a quantidade de números que haverá na list
+    lista=[] #Declara uma list vazia
+    for i in range(0,quant_num):
+        lista.append(randint(0,100)) #Incrementa a list com números aleatórios de 0 a 100
+    print (lista)
+    return lista
+
+def write_file(file,lista):
+    for i in lista:
+        file.write("%s "%i)
+
+def count_odd_even(file):
     count_even=0
     count_odd=0
     num=file.read() #Lê o arquivo e passa para 'num'
@@ -10,10 +24,12 @@ def count_odd(file):
             count_even += 1
         else:
             count_odd += 1
-    print ("ppPrimeira linha do arquivo: ")
+    print ("Quantidades no arquivo: ")
     print ("Pares: ",count_even,"\nÍmpares: ",count_odd,"\n")
 
-file=open('odd.txt','r')
-count_odd(file)
-file.close()
-print ('testando git')
+lista_num=create_list() #Cria uma lista de números aleatórios
+file=open('arq.txt','w') #Abre o arquivo para escrita
+write_file(file,lista_num) #Escreve a lista criada no arquivo
+file=open('arq.txt','r') #Abre o arquivo para leitura
+count_odd_even(file) #Conta o número de pares e ímpares no arquivo
+file.close() #Fecha o arquivo
